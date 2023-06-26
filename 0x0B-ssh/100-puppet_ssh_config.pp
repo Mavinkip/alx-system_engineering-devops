@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#removing password
+100.26.221.191~/.ssh/school no
