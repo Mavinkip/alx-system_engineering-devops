@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#removing password
+sudo nano /etc/ssh/sshd_config
