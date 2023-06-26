@@ -1,3 +1,12 @@
 #!/usr/bin/env bash
-#removing password
-100.26.221.191~/.ssh/school no
+#connecting
+file_line { 'configuration_file':
+  ensure => 'present',
+  path   => '/etc/ssh/ssh_config',
+  line   => '	IdentityFile ~/.ssh/school',
+}
+file_line { 'no_password':
+  ensure => 'present',
+  path   => '/etc/ssh/ssh_config',
+  line   => '	PasswordAuthentication no',
+}
