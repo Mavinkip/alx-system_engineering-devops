@@ -1,14 +1,16 @@
-#!/usr/bin/env bash
-# bash script that Install nginx web server
+#!/bin/bash
 
-#update the server
+# Update package lists
 sudo apt update
-# installl nginx
-sudo apt-get install nginx -y
-# change ownership
-sudo chown -R "$USER":"$USER" /var/www
-# update the default file dispayed
-echo "Hello World!" | tee /var/www/html/index.nginx-debian.html
-# restart nginx
-sudo systemctl restart nginx
-sudo apt autoremove -y
+
+# Install Nginx
+sudo apt install -y nginx
+
+# Configure Nginx to listen on port 80
+sudo sed -i 's/#listen 80;/listen 80;/g' /etc/nginx/sites-available/default
+
+# Restart Nginx
+sudo service nginx restart
+
+# Create the "Hello World" index page
+sudo bash -c "echo 'Hello World!' > /var/www/html/index.html"
