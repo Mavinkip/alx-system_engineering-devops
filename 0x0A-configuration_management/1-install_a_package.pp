@@ -1,7 +1,6 @@
-#!/usr/bin/env bash
-#Installing puppet-lint
-package { 'puppet-lint':
-  ensure   => '2.5.0',
-  provider => 'gem',
-  source   => 'https://rubygems.org',
+# installing flask
+
+package { 'flask':
+  ensure   => '2.1.0',
+  provider => 'pip3',
 }
