@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #Installing puppet-lint
 
 package { 'puppet-lint':
